@@ -1,0 +1,7 @@
+Opisy funkcji po stronie serwera: https://docs.google.com/document/d/1ICOjv2R69uACb_gPQgK8e9AGp-A0qJwK34khsnINyUM/edit?usp=sharing
+
+Opisy funkcji po stronie klienta: https://docs.google.com/document/d/122ZcglnBDjAsLkCUj9AnHDPmY90D-8kdcq1CuZfAy0E/edit?usp=sharing
+
+Dokumentacja techniczna: https://docs.google.com/document/d/1WM6mjU8Bjg97TKX2GaybXE-YFJc9P8oKO2K99nRRejs/edit?usp=sharing
+
+Opis rozwiązania zadania: https://docs.google.com/document/d/1dhWWkrTssO-ck60pBNdRL_WhBEL4zXYKh9pqFJQ5-0I/edit?usp=sharing

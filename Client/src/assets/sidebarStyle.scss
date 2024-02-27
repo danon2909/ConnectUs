@@ -1,0 +1,143 @@
+@import './variables';
+@import './imports';
+
+.wrap__container {
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  width: 364px;
+  position: relative;
+
+  @media screen and (max-width: 400px) {
+    width: 340px;
+  }
+}
+
+.navSwitch {
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/user.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  border: none;
+  border-left: 1px solid $lightBlue;
+  border-top: 1px solid $lightBlue;
+  border-bottom: 1px solid $lightBlue;
+  background-color: $light;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 150ms ease;
+  display: none;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  min-width: 339px;
+  transition: 300ms ease-out;
+
+  .header {
+    padding: 1.25em 2em;
+    border-bottom: 1px solid $lighterBlue;
+
+    h3 {
+      margin: 0;
+      color: $darkBlue;
+      font-size: 1.25em;
+      font-weight: 700;
+    }
+  }
+
+  .groups,
+  .users {
+    border-radius: 20px;
+    background-color: $light;
+
+    @media screen and (min-width: 1921px) {
+      height: 100% !important;
+
+      .users__list,
+      .group__list {
+        height: auto;
+      }
+    }
+  }
+
+  .group__list {
+    display: flex;
+    padding: 1.25em 2em;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: scroll;
+    height: 256px;
+    position: relative;
+  }
+
+  .convo__list {
+    @extend .group__list;
+    height: 400px;
+    overflow-y: scroll;
+  }
+
+  .noMsgAlert {
+    font-size: 14px;
+    font-weight: 300;
+    color: $darkBlue;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navSwitch {
+    z-index: 5;
+  }
+
+  .sidebar {
+    position: absolute;
+    background-color: $light;
+    outline: 1px solid $darkBlue;
+    padding-top: 40px;
+    z-index: 4;
+    opacity: 0;
+    gap: 0;
+    height: 70vh;
+    border-radius: 20px 0 0 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transform: translateX(100%);
+
+    &.active {
+      opacity: 1 !important;
+      transform: translateX(0%);
+    }
+
+    .groups,
+    .users {
+      border-radius: 0;
+    }
+
+    .users {
+      order: 1;
+    }
+
+    .groups {
+      order: 2;
+    }
+
+    .convo__list {
+      height: 300px;
+    }
+  }
+
+  .navSwitch {
+    display: block;
+  }
+}

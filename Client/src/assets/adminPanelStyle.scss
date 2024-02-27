@@ -1,0 +1,226 @@
+@import './variables';
+@import './imports';
+
+.admin__panel {
+  gap: 20px;
+  justify-content: space-between;
+
+  .dashboard__container {
+    height: auto;
+    gap: 20px;
+    flex-grow: 1;
+    flex-direction: column;
+
+    h2 {
+      font-size: 3.5em;
+      font-weight: 700;
+      color: $lightBlue;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      font-weight: 900;
+      color: $darkBlue;
+    }
+
+    .backups {
+      h3 {
+        color: $darkBlue;
+        font-weight: 800;
+        font-size: 1.6em;
+      }
+
+      p {
+        color: $darkBlue;
+        font-weight: 600;
+        font-size: 1.25em;
+      }
+
+      .main__btn {
+        padding-left: 2em;
+        padding-right: 6em;
+        position: relative;
+        color: $light;
+        font-weight: 700;
+
+        &::after {
+          content: url(./images/Folder-sync.svg);
+          position: absolute;
+          right: 2em;
+          top: 54%;
+          transform: translateY(-50%);
+        }
+
+        &:not(.install__backup)::after {
+          content: url(./images/Folder-Marked.svg);
+        }
+
+        &.install__backup {
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 10px;
+        border-top: 10px solid $light;
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        width: 60%;
+        overflow-y: scroll;
+        flex-grow: 1;
+        max-height: 250px;
+        flex-direction: column;
+      }
+    }
+
+    .change__password {
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: $darkBlue;
+      }
+
+      .input__group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+
+        input {
+          flex-grow: 1;
+          max-width: 30% !important;
+        }
+      }
+
+      .main__btn {
+        margin-top: 5px;
+      }
+
+      @media screen and (max-width: 900px) {
+        form {
+          margin-bottom: 20px;
+        }
+
+        .input__group {
+          flex-direction: column;
+          gap: 5px;
+
+          input {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-height: 900px) {
+      height: fit-content;
+      padding: 3em 2em;
+      border-radius: 20px;
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      .backups ul {
+        width: 100%;
+      }
+    }
+  }
+
+  .admin__panel-sidebar {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .groups,
+    .users {
+      height: 49%;
+      position: relative;
+      padding: 30px 25px;
+      border-radius: 20px;
+      background-color: $light;
+
+      .element {
+        display: flex;
+        gap: 10px;
+        place-items: center;
+        color: $darkBlue;
+
+        .pfp {
+          border-radius: 100%;
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border: 1px solid $lighterBlue;
+        }
+
+        .deleteIcon {
+          margin-left: auto;
+          cursor: pointer;
+        }
+      }
+
+      h2 {
+        color: $darkBlue;
+        font-size: 1.4em;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .groups__list,
+    .users__list {
+      max-height: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: scroll;
+      padding: 20px;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 20px;
+
+      .groups,
+      .users {
+        flex-grow: 1;
+        min-width: 250px;
+        height: 370px;
+
+        &.users {
+          order: 1;
+        }
+
+        &.groups {
+          order: 2;
+        }
+      }
+    }
+  }
+}
+
+:root[data-theme='dark'] {
+  .deleteIcon img {
+    filter: invert(1) grayscale(1);
+  }
+}

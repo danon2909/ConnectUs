@@ -1,0 +1,27 @@
+:root[data-theme='light'] {
+  --darkBlue: #0b2545;
+  --blue: #13315c;
+  --lightBlue: #134074;
+  --lighterBlue: #8da9c4;
+  --light: #eef4ed;
+  --lightDarker: #f3fcf2;
+}
+
+:root[data-theme='dark'] {
+  --darkBlue: #eef4ed;
+  --blue: #f3fcf2;
+  --lightBlue: #134074;
+  --lighterBlue: #8da9c4;
+  --light: #0f0f0f;
+  --lightDarker: #2f2f2f;
+}
+
+$darkBlue: var(--darkBlue);
+$blue: var(--blue);
+$lightBlue: var(--lightBlue);
+$lighterBlue: var(--lighterBlue);
+$light: var(--light);
+$lightDarker: var(--lightDarker);
+$mainLight: #eef4ed;
+$mainDark: #0b2545;
+$mainBlue: #13315c;

@@ -1,0 +1,29 @@
+@import './variables';
+@import './imports';
+
+.alert__wrapper {
+  position: fixed !important;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 15px;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 99999;
+
+  p {
+    color: inherit !important;
+  }
+
+  .alert {
+    padding: 1em 2em;
+    border-radius: 20px;
+  }
+
+  .main__btn {
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: $mainBlue;
+    color: $mainLight;
+  }
+}

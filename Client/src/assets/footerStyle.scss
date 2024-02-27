@@ -1,0 +1,12 @@
+@import './variables';
+@import './imports';
+
+.footer {
+  width: 100%;
+  background-color: $mainBlue;
+  padding: 20px;
+  border-radius: 20px 20px 0 0;
+  color: $mainLight;
+  text-align: center;
+  max-height: 64px;
+}
